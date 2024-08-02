@@ -1,9 +1,15 @@
 package com.example.ECommerceWebsite.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import org.springframework.stereotype.Component;
 
+@Entity
 @Component
 public class Product {
+    @Id
+    @GeneratedValue
     private int productId;
     private String prodName;
     private double price;

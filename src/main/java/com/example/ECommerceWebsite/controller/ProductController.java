@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class ProductController {
@@ -19,7 +20,7 @@ public class ProductController {
         return productService.getProduct();
     }
     @GetMapping("/products/{prodId}")
-    public Product getProductById(@PathVariable int prodId){
+    public Optional<Product> getProductById(@PathVariable int prodId){
         //System.out.println(productService.getProduct().get(1));
         return productService.getProductById(prodId);
     }
